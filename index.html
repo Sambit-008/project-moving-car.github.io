@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moving-car-project</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        .container {
+            background: url(/sky.jpg) no-repeat center center/cover;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .road {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url(/road.jpg);
+            background-repeat: repeat;
+            height: 451px;
+            width: 500%;
+            z-index: 1;
+            animation: road 6s linear infinite;
+        }
+
+        @keyframes road {
+            100% {
+                transform: translateX(-1400px);
+            }
+        }
+
+        .city {
+            display: block;
+            position: absolute;
+            bottom: 447px;
+            left: 0;
+            right: 0;
+            background-image: url(/city.png);
+            background-repeat: repeat-x;
+            height: 251px;
+            width: 500%;
+            z-index: 1;
+            animation: city 30s linear infinite;
+        }
+
+        @keyframes city {
+            100% {
+                transform: translateX(-1400px);
+            }
+
+        }
+
+        .car {
+
+            position: absolute;
+            width: 500px;
+            left: 17%;
+            bottom: 263px;
+            z-index: 2;
+
+
+        }
+
+        .car img {
+            width: 130%;
+            animation: car 0.7s linear infinite;
+        }
+
+        @keyframes car {
+            0% {
+                transform: translateY(-2px);
+            }
+
+            50% {
+                transform: translateY(2px);
+            }
+
+            100% {
+                transform: translateY(-2px);
+            }
+
+        }
+
+        .wheel {
+            position: absolute;
+            width: 500px;
+            left: 17%;
+            bottom: 394px;
+            z-index: 2;
+
+        }
+
+        .wheel img {
+            width: 118px;
+            height: 120px;
+            animation: wheel 0.7s linear infinite;
+
+        }
+
+        @keyframes wheel {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #front-wheel {
+            position: absolute;
+            left: 455px;
+        }
+
+        #back-wheel {
+            position: absolute;
+            left: 55px;
+        }
+
+        .h-primary h1 {
+            color: rgb(3, 61, 68);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        @media (max-width: 411px) {
+            .car {
+                position: absolute;
+                width: 200px;
+            }
+
+            .wheel img {
+                width: 48px;
+                height: 49px;
+            }
+
+            .wheel {
+
+                left: 8%;
+                bottom: 320px
+            }
+
+            #front-wheel {
+                position: absolute;
+                left: 213px;
+            }
+
+            #back-wheel {
+                position: absolute;
+                left: 55px;
+            }
+
+            .city {
+
+                bottom: 347px;
+
+
+                height: 251px;
+
+            }
+
+            .road {
+
+                bottom: 0;
+
+                height: 351px;
+                width: 800%;
+
+
+            }
+        }
+
+        @media (max-width: 768px)and(min-width: 412px) {
+            .car {
+                position: absolute;
+                width: 300px;
+            }
+
+            .wheel img {
+                width: 50px;
+                height: 49px;
+            }
+
+            .wheel {
+
+                left: 7%;
+                bottom: 320px
+            }
+
+            #front-wheel {
+                position: absolute;
+                left: 213px;
+            }
+
+            #back-wheel {
+                position: absolute;
+                left: 55px;
+            }
+
+            .city {
+
+                bottom: 347px;
+
+
+                height: 251px;
+
+            }
+
+            .road {
+
+                bottom: 0;
+
+                height: 351px;
+                width: 800%;
+
+
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="h-primary">
+            <h1>THE VOSDA CAR</h1>
+        </div>
+        <div class="road"></div>
+        <div class="city"> </div>
+        <div class="car">
+            <img src="/car.png" alt="">
+        </div>
+        <div class="wheel">
+            <img src="/wheel.png" id="back-wheel">
+            <img src="/wheel.png" id="front-wheel">
+        </div>
+
+    </div>
+</body>
+
+</html>
